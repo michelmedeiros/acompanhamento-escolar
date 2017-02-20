@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * Created by miche on 19/02/2017.
+ * Created by Michel on 19/02/2017.
  */
 @Component
 public class AlunoGatewayImpl implements AlunoGateway {
