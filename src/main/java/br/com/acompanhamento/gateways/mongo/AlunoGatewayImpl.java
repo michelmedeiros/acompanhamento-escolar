@@ -22,7 +22,12 @@ public class AlunoGatewayImpl implements AlunoGateway {
     }
 
     @Override
-    public List<Aluno> findAlunos() {
+    public List<Aluno> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public Aluno save(Aluno aluno) {
+        return repository.save(aluno);
     }
 }

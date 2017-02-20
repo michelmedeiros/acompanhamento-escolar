@@ -5,5 +5,6 @@ import br.com.acompanhamento.domains.Aluno;
 import java.util.List;
 
 public interface AlunoGateway {
-    List<Aluno> findAlunos();
+    List<Aluno> findAll();
+    Aluno save(Aluno aluno);
 }
