@@ -30,4 +30,19 @@ public class AlunoGatewayImpl implements AlunoGateway {
     public Aluno save(Aluno aluno) {
         return repository.save(aluno);
     }
+
+    @Override
+    public Aluno findById(String id) {
+        return repository.findOne(id);
+    }
+
+    @Override
+    public void delete(String id) {
+        repository.delete(id);
+    }
+
+    @Override
+    public Aluno update(Aluno aluno) {
+        return repository.save(aluno);
+    }
 }
