@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* AcompanhamentoMain
+web: java -jar target/acompanhamento-escolar-core-1.0-SNAPSHOT.jar
