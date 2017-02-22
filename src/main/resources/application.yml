@@ -1,5 +1,5 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://admin:admin@ds157529.mlab.com:57529/heroku_xt0xvlzf
+      uri: mongodb://admin:mc007741@ds157529.mlab.com:57529/heroku_xt0xvlzf
   mvc.async.request-timeout: 10000
