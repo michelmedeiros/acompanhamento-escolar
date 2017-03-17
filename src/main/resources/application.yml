@@ -1,5 +1,12 @@
+#PRODUCAO
+#  data:
+#   mongodb:
+#      uri: mongodb://admin:mc007741@ds157529.mlab.com:57529/heroku_xt0xvlzf
+
 spring:
   data:
     mongodb:
-      uri: mongodb://admin:mc007741@ds157529.mlab.com:57529/heroku_xt0xvlzf
-  mvc.async.request-timeout: 10000
+      database: acompanhamento-escolar
+      host: localhost
+      port: 27017
+mvc.async.request-timeout: 10000
