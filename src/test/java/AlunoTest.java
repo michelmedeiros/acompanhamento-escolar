@@ -98,5 +98,46 @@ public class AlunoTest {
     }
 
 
+    @Test
+    public void sucessoAExcluirAluno() {
+
+        Aluno aluno = Aluno.builder().id("999").idade(1).nome("Dedé").build();
+        response =
+                given()
+                        .header("Accept", ContentType.JSON)
+                        .contentType(ContentType.JSON)
+                        .body(aluno)
+                        .expect()
+                        .statusCode(201)
+                        .when()
+                        .post("/alunos")
+                        .then()
+                        .extract().response();
+        jsonAsString = response.asString();
+
+        Aluno alunoInserido = new Gson().fromJson(jsonAsString, Aluno.class);
+        assertThat(alunoInserido, notNullValue());
+
+        response = given().pathParam("id", alunoInserido.getId())
+                .when().delete("/alunos/{id}")
+                .then().statusCode(200).extract().response();
+
+        assertThat(response.getStatusCode(), equalTo(200));
+    }
 
 }
+
+/*
+@Test
+public void deveAdicionarUmUsuario() {
+
+Usuario resposta = retorno.getObject("usuario", Usuario.class);
+assertEquals("Joao da Silva", resposta.getNome());
+assertEquals("joao@dasilva.com", resposta.getEmail());
+// deletando aqui
+given()
+.contentType("application/xml").body(resposta)
+.expect().statusCode(200)
+.when().delete("/usuarios/deleta").andReturn().asString();
+}
+ */
